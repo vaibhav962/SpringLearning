@@ -3,13 +3,29 @@ package com.springLearning.config;
 import com.springLearning.beans.Vehicle;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class ProjectConfig {
-    @Bean
-    Vehicle vehicle(){
+    @Bean(name = "porche")
+    Vehicle vehicle1(){
         var v = new Vehicle();
         v.setName("Porche 911");
+        return v;
+    }
+
+    @Bean(value = "lamborghini")
+    Vehicle vehicle2(){
+        var v = new Vehicle();
+        v.setName("Lamborghini Sián");
+        return v;
+    }
+
+    @Primary
+    @Bean("maserati")
+    Vehicle vehicle3(){
+        var v = new Vehicle();
+        v.setName("Maserati MC20");
         return v;
     }
 }
