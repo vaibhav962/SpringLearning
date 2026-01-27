@@ -2,6 +2,7 @@ package com.springLearning.beans;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,7 +13,7 @@ public class Person {
     private final Vehicle vehicle;
 
     @Autowired //optional if only one constructor
-    public Person(Vehicle vehicle) {
+    public Person(@Qualifier("porche") Vehicle vehicle) {
         System.out.println("Person bean created");
         this.vehicle = vehicle;
     }

@@ -19,11 +19,6 @@ public class Vehicle {
         this.name = name;
     }
 
-    @PostConstruct
-    public void initialize(){
-        this.name = "Maserati MC20";
-    }
-
 //    @PreDestroy
 //    public void destroy(){
 //        System.out.println("Destroying the bean...");
