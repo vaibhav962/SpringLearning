@@ -9,18 +9,18 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = "com.springLearning.beans")
 public class ProjectConfig {
-    @Bean("maserati")
-    Vehicle vehicle(){
-        var v = new Vehicle();
-        v.setName("Maserati MC20");
-        return v;
-    }
-
-    @Bean("arthur")
-    Person person(Vehicle v){
-        var p = new Person();
-        p.setName("Arthur");
-        p.setVehicle(v);
-        return p;
-    }
+//    @Bean("maserati")
+//    Vehicle vehicle(){
+//        var v = new Vehicle();
+//        v.setName("Maserati MC20");
+//        return v;
+//    }
+//
+//    @Bean("arthur")
+//    Person person(Vehicle v){
+//        var p = new Person();
+//        p.setName("Arthur");
+//        p.setVehicle(v);
+//        return p;
+//    }
 }
