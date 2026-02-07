@@ -19,33 +19,15 @@ public class VehicleServices {
     private Tyres tyres;
 
     public String playMusic(boolean vehicleStarted, Song song){
-        String music = null;
-        if(vehicleStarted){
-            music = speakers.makeSound(song);
-        }else{
-            logger.log(Level.SEVERE,"Vehicle not started to perform the" + " operation");
-        }
-        return music;
+        return speakers.makeSound(song);
     }
 
     public String moveVehicle(boolean vehicleStarted){
-       String status = null;
-        if(vehicleStarted){
-            status = tyres.rotate();
-        }else{
-            logger.log(Level.SEVERE,"Vehicle not started to perform the" + " operation");
-        }
-        return status;
+        return tyres.rotate();
     }
 
     public String applyBrake(boolean vehicleStarted){
-        String status = null;
-        if(vehicleStarted){
-            status = tyres.stop();
-        }else{
-            logger.log(Level.SEVERE,"Vehicle not started to perform the" + " operation");
-        }
-        return status;
+        return tyres.stop();
     }
 
 
