@@ -1,5 +1,6 @@
 package com.springLearning.services;
 
+import com.springLearning.interfaces.LogAspect;
 import com.springLearning.interfaces.Speakers;
 import com.springLearning.interfaces.Tyres;
 import com.springLearning.model.Song;
@@ -18,6 +19,7 @@ public class VehicleServices {
     private Speakers speakers;
     private Tyres tyres;
 
+    @LogAspect
     public String playMusic(boolean vehicleStarted, Song song){
         return speakers.makeSound(song);
     }

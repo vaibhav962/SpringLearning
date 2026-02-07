@@ -16,8 +16,9 @@ import java.util.logging.Logger;
 @Order(2)
 public class LoggerAspect {
     private Logger logger = Logger.getLogger(LoggerAspect.class.getName());
-    @Around("execution(* com.springLearning.services.*.*(..))")
-    public void log(ProceedingJoinPoint joinPoint) throws Throwable {
+
+    @Around("@annotation(com.springLearning.interfaces.LogAspect)")
+    public void logAnnotation(ProceedingJoinPoint joinPoint) throws Throwable {
         logger.info(joinPoint.getSignature().toString() + " method execution start");
         Instant start = Instant.now();
         joinPoint.proceed();
@@ -26,6 +27,17 @@ public class LoggerAspect {
         logger.info("Time took to execute the method : "+timeElapsed);
         logger.info(joinPoint.getSignature().toString() + " method execution end");
     }
+
+//    @Around("execution(* com.springLearning.services.*.*(..))")
+//    public void log(ProceedingJoinPoint joinPoint) throws Throwable {
+//        logger.info(joinPoint.getSignature().toString() + " method execution start");
+//        Instant start = Instant.now();
+//        joinPoint.proceed();
+//        Instant finish = Instant.now();
+//        long timeElapsed = Duration.between(start, finish).toMillis();
+//        logger.info("Time took to execute the method : "+timeElapsed);
+//        logger.info(joinPoint.getSignature().toString() + " method execution end");
+//    }
 
     @AfterThrowing(value = "execution(* com.springLearning.services.*.*(..))",throwing = "e")
    public void logException(JoinPoint joinPoint, Exception e){
