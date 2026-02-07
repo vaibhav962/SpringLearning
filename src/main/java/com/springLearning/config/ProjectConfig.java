@@ -5,9 +5,11 @@ import com.springLearning.beans.Vehicle;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
-@ComponentScan(basePackages = {"com.springLearning.beans", "com.springLearning.implementations", "com.springLearning.services"})
+@ComponentScan(basePackages = {"com.springLearning.aspects", "com.springLearning.beans", "com.springLearning.implementations", "com.springLearning.services"})
+@EnableAspectJAutoProxy
 public class ProjectConfig {
     @Bean("maserati")
     Vehicle vehicle(){
