@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "com.springLearning.beans")
+@ComponentScan(basePackages = {"com.springLearning.beans", "com.springLearning.implementations", "com.springLearning.services"})
 public class ProjectConfig {
     @Bean("maserati")
     Vehicle vehicle(){
